@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> bezze</title>
+</head>
+<body style="background:grey;">
+
+<div id="container" style="text-align: center; margin-top:100px;">
+            <input type="text" id="title" placeholder="Title"> </br></br>
+            <input type="text" id="comment" placeholder="Comment"></br></br></br>
+
+            <input type="text" id="row1" placeholder="First row"></br></br>
+            <input type="text" id="row2" placeholder="Second row"></br></br>
+            <input type="text" id="row3" placeholder="Third row"></br></br>
+            <button onclick="prikazi()">Prikazi</button>
+</div>
+
+<script>
+function prikazi() {
+
+    document.getElementById("naslov").innerHTML = "<h2>" + document.getElementById("title").value + "</h2>";
+    document.getElementById("komentar").innerHTML = "<em>" + document.getElementById("comment").value + "</em>";
+
+    document.getElementById("red1").innerHTML = "<input type='radio' id = 'radio1' name='number'> <b>" + document.getElementById("row1").value + "</b>";
+    document.getElementById("red2").innerHTML = "<input type='radio' id = 'radio2' name='number'> <b>" + document.getElementById("row2").value + "</b>";
+    document.getElementById("red3").innerHTML = "<input type='radio' id = 'radio3' name='number'> <b>" + document.getElementById("row3").value + "</b>";
+
+    document.getElementById("dugme").innerHTML = "<input type='button' value='Continue' style='height:25px; width:120px; background-color: lightgreen; color:white'>";
+ 
+}
+</script>
+
+<h1 style="color:green; position:relative; left: 38%; margin-top: 250px;">FocusVision Decipher</h1>
+
+<div id="prikaz" style="text-align:center; width:600px; height:300px; background-color:white; font-size:large; position:relative; left: 38%;">
+ 
+            <p id="naslov"></p>
+            <p id="komentar" style="color:lightgreen"></p>
+            
+            <p id="red1"  style="color:grey"></p>
+            <p id="red2"  style="color:grey"></p>
+            <p id="red3"  style="color:grey"></p>
+
+            <p id="dugme" onclick="nextScreen();"></p>
+
+</div>
+
+<script>
+
+function nextScreen() {
+
+    if(document.getElementById('radio1').checked) {
+        document.write("<h1 style='color:lightgreen'>QUALIFIED</h1>")
+    } 
+    else if(document.getElementById('radio2').checked) {
+        document.write("<h1 style='color:lightgreen'>QUALIFIED</h1>")
+    }
+    else if(document.getElementById('radio3').checked) {
+        document.write("<h1 style='color:red'>TERMINATED</h1>")
+    }
+    else {
+        alert("Please select something first!");
+    }
+}
+
+</script>
+
+</body>
+</html>
